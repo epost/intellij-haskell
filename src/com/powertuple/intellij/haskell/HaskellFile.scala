@@ -24,19 +24,10 @@ import com.intellij.psi.FileViewProvider
 import org.jetbrains.annotations.NotNull
 
 class HaskellFile(viewProvider: FileViewProvider) extends PsiFileBase(viewProvider, HaskellLanguage.Instance) {
-
   @NotNull
-  def getFileType: FileType = {
-    HaskellFileType.INSTANCE
-  }
-
-  override def toString: String = {
-    "Haskell file"
-  }
-
-  override def getIcon(flags: Int): Icon = {
-    super.getIcon(flags)
-  }
+  def getFileType: FileType = HaskellFileType.INSTANCE
+  override def toString = "Haskell file"
+  override def getIcon(flags: Int): Icon = super.getIcon(flags)
 }
 
 object HaskellFileType {
@@ -44,22 +35,10 @@ object HaskellFileType {
 }
 
 class HaskellFileType extends LanguageFileType(HaskellLanguage.Instance) {
-
-  def getName: String = {
-    "Haskell file"
-  }
-
-  def getDescription: String = {
-    "Haskell language file"
-  }
-
-  def getDefaultExtension: String = {
-    "hs"
-  }
-
-  def getIcon: Icon = {
-    HaskellIcons.HaskellSmallLogo
-  }
+  def getName             = "Haskell file"
+  def getDescription      = "Haskell language file"
+  def getDefaultExtension = "hs"
+  def getIcon: Icon       = HaskellIcons.HaskellSmallLogo
 }
 
 object LiterateHaskellFileType {
@@ -67,22 +46,10 @@ object LiterateHaskellFileType {
 }
 
 class LiterateHaskellFileType extends LanguageFileType(HaskellLanguage.Instance) {
-
-  def getName: String = {
-    "Literate Haskell file"
-  }
-
-  def getDescription: String = {
-    "Literate Haskell language file"
-  }
-
-  def getDefaultExtension: String = {
-    "lhs"
-  }
-
-  def getIcon: Icon = {
-    HaskellIcons.HaskellSmallLogo
-  }
+  def getName             = "Literate Haskell file"
+  def getDescription      = "Literate Haskell language file"
+  def getDefaultExtension = "lhs"
+  def getIcon: Icon       = HaskellIcons.HaskellSmallLogo
 }
 
 class HaskellLanguageFileTypeFactory extends FileTypeFactory {
